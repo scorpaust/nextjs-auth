@@ -45,7 +45,7 @@ export const authOptions: NextAuthOptions = {
             credentials: { email: "", password: ""} as any
         })
     ],
-    secret: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg",
+    secret: process.env.NEXT_AUTH_SECRET,
     callbacks: {
         async jwt({ token, user }) {
           return { ...token, ...user };
